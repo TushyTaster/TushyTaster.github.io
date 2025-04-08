@@ -1,0 +1,97 @@
+body {
+    background-color: lightgreen; /* Set background to light green */
+    background-image: radial-gradient(circle, white 20%, transparent 20%), radial-gradient(circle, white 20%, transparent 20%);
+    background-size: 40px 40px; /* Size of the polka dots */
+    background-position: 0 0, 20px 20px; /* Positioning of the dots */
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures that the body takes full height of the viewport */
+}
+
+/* Header */
+header {
+    background-color: #90EE90; /* Light green */
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: white;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+}
+
+/* Gallery Section with Triforce Layout */
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 400px; /* Adjust height as needed */
+    padding: 20px;
+}
+
+.photo {
+    position: absolute;
+    border: 5px solid #fff; /* White border for photos */
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.photo:hover {
+    transform: scale(1.1);
+}
+
+.photo img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Position images to form a Triforce */
+.photo.top {
+    top: 0; /* Center the top image */
+}
+
+.photo.bottom-left {
+    bottom: 0;
+    left: 0; /* Bottom left image */
+}
+
+.photo.bottom-right {
+    bottom: 0;
+    right: 0; /* Bottom right image */
+}
+
+/* Footer */
+footer {
+    background-color: #90EE90;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
