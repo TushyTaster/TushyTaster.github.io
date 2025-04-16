@@ -97,3 +97,19 @@ footer {
     color: white;
     margin-top: auto; /* Pushes footer to the bottom */
 }
+@media (max-width: 768px) {
+  .gallery {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .photo {
+    position: static;
+    margin-bottom: 20px;
+  }
+
+  .photo img {
+    width: 90%;
+    height: auto;
+  }
+}
