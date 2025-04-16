@@ -1,21 +1,20 @@
 body {
-    background-color: lightblue; /* Set background to light blue */
-    background-image: radial-gradient(circle, white 20%, transparent 20%), radial-gradient(circle, white 20%, transparent 20%);
-    background-size: 40px 40px; /* Size of the polka dots */
-    background-position: 0 0, 20px 20px; /* Positioning of the dots */
+    background-color: lightblue;
+    background-image: radial-gradient(circle at 10% 10%, #fff 10%, transparent 11%), radial-gradient(circle at 50% 50%, #fff 8%, transparent 9%);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
     font-family: Arial, sans-serif;
     color: #333;
     margin: 0;
     padding: 0;
-    
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensures that the body takes full height of the viewport */
+    min-height: 100vh;
+    animation: sparkle 20s linear infinite;
 }
 
-/* Header */
 header {
-    background-color: #87CEEB; /* Sky blue */
+    background-color: #87CEEB;
     padding: 20px;
     text-align: center;
 }
@@ -23,6 +22,8 @@ header {
 header h1 {
     font-size: 2.5em;
     color: white;
+    font-family: 'Pacifico', cursive;
+    text-shadow: 2px 2px #c2f0ff;
 }
 
 nav ul {
@@ -41,19 +42,18 @@ nav a {
     font-size: 1.2em;
 }
 
-/* Gallery Section with Triforce Layout */
 .gallery {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    height: 400px; /* Adjust height as needed */
+    height: 400px;
     padding: 20px;
 }
 
 .photo {
     position: absolute;
-    border: 5px solid #fff; /* White border for photos */
+    border: 5px solid #fff;
     border-radius: 20px;
     padding: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -62,7 +62,9 @@ nav a {
 }
 
 .photo:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+    filter: brightness(1.1) saturate(1.2);
+    box-shadow: 0 0 20px rgba(135, 206, 235, 0.5);
 }
 
 .photo img {
@@ -72,26 +74,29 @@ nav a {
     border-radius: 15px;
 }
 
-/* Position images to form a Triforce */
-.photo.top {
-    top: 0; /* Center the top image */
-}
+.photo.top { top: 0; }
+.photo.bottom-left { bottom: 0; left: 0; }
+.photo.bottom-right { bottom: 0; right: 0; }
 
-.photo.bottom-left {
-    bottom: 0;
-    left: 0; /* Bottom left image */
-}
-
-.photo.bottom-right {
-    bottom: 0;
-    right: 0; /* Bottom right image */
-}
-
-/* Footer */
 footer {
     background-color: #87CEEB;
     padding: 15px;
     text-align: center;
     color: white;
-    margin-top: auto; /* Pushes footer to the bottom */
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        flex-direction: column;
+        height: auto;
+    }
+    .photo {
+        position: static;
+        margin-bottom: 20px;
+    }
+    .photo img {
+        width: 90%;
+        height: auto;
+    }
 }
